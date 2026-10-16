@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-   <div class="background_box">
+   <div class="top_background_box">
    <header id="header">
       <div class="header_inner">
       <div class="logo">
@@ -36,26 +36,29 @@
       </div>
       <div class="hamburger">
          <span></span>
-         <p class="hamburger_menu">MENU</p>
+         <p class="hamburger_menu">
+            <span class="menu_text">MENU</span>
+            <span class="close_text">CLOSE</span>
+         </p>
       </div>
       
-
       <nav class="header_nav">
          <ul>
-            <li><a href="#header">ホーム</a></li>
-            <li><a href="concept">デザインへの想い</a></li>
-            <li><a href="#about">私について。</a></li>
-            <li><a href="#service">できること。</a></li>
-            <li><a href="#works">制作したもの。</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="concept.html">デザインへの想い</a></li>
+            <li><a href="about.html">私について。</a></li>
+            <li><a href="service.html">できること。</a></li>
+            <li><a href="works.html">制作したもの。</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
          </ul>
       </nav>
+      </div>
    </header>
 
    <main>
       <section id="concept">
          <div class="main_vs">
-         <img src="./images/pc_main_vs.jpg" alt="たんぽぽの綿毛">
+         <img src="./images/pc_main_vs01.jpg" alt="たんぽぽの綿毛">
          <h1>
             「想い」を集め、<br>
             カタチにして届けます。
@@ -69,7 +72,7 @@
             ひとつひとつの想いを丁寧にお伺いし、<br>
             伝わるデザインにして届けます。
          </p>
-         <a href="concept.html" class="more_button">詳しく見る</a>
+         <a href="concept.html" class="more_button"><span>詳しく見る</span></a>
          </div>
       </section>
 
@@ -154,12 +157,12 @@
                <img src="./images/pc_menu06.jpg" alt="パッケージ">
             </div>
          </div>
-         <a href="service.html" class="more_button">詳しく見る</a>
+         <a href="service.html" class="more_button"><span>詳しく見る</span></a>
       </section>
       </div>
 
       <section id="works">
-         <div class="section_title">
+         <div class="section_title mgtp80">
          <h2>制作したもの。</h2>
          <img class="wave" src="./images/pc_wave.png" alt="波線">
          <span class="section_title_en">WORKS</span>
@@ -239,7 +242,7 @@
                </a>
             </div>
          </div>
-         <a href="works.html" class="more_button list-all">一覧を見る</a>
+         <a href="works.html" class="more_button list-all"><span>一覧を見る</span></a>
       </section>
 
       <section id="about">
@@ -271,12 +274,12 @@
                </p>
             </div>
          </div>
-         <a href="about.html" class="more_button">詳しく見る</a>
+         <a href="about.html" class="more_button"><span>詳しく見る</span></a>
          </div>
       </section>
 
       <section id="contact" class="wrapper">
-          <div class="section_title">
+          <div class="section_title mgtp80">
          <h2>お問い合わせ</h2>
          <img class="wave" src="./images/pc_wave.png" alt="波線">
          <span class="section_title_en">CONTACT</span>
@@ -288,19 +291,21 @@
             まだ具体的な内容が決まっていなくても大丈夫です。<br>
             お気軽にご相談ください。
          </p>
-         <a href="contact.html" class="more_button link-contact">お問い合わせ</a>
+         <a href="contact.html" class="more_button link-contact"><span>お問い合わせ</span></a>
       </section>
    </main>
 
    <footer>
+      <img src="./images/footer_dandelion01.png" class="footer_dandelion" alt="たんぽぽの花">
+      <div class="footer_background"></div>
       <div class="footer_inner">
       <nav class="footer_nav">
          <ul>
-            <li><a href="#concept">デザインへの想い</a></li>
-            <li><a href="#service">できること。</a></li>
-            <li><a href="#works">制作したもの。</a></li>
-            <li><a href="#about">私について。</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="index.html#about">デザインへの想い</a></li>
+            <li><a href="index.html#service">できること。</a></li>
+            <li><a href="index.html#works">制作したもの。</a></li>
+            <li><a href="index.html#about">私について。</a></li>
+            <li><a href="index.html#contact">お問い合わせ</a></li>
          </ul>
       </nav>
       <div class="snslink">
@@ -313,7 +318,17 @@
       </div>
       <p>©︎2026 makiko kagawa</p>
       </div>
-   </footer>
+   </div>
+   </footer>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script>
+   $(function(){
+      $(".hamburger").on("click",function(){
+         $(".hamburger").toggleClass("open");
+         $(".header_nav").fadeToggle();
+      })
+   })
+</script>
 
 </body>
 </html>

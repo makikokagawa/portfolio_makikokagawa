@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>makikokagawa_portfolio|制作実績【「DESIGN CAFE」 WEBサイト】</title>
+
+   <!-- Adobeフォントの読み込み -->
+   <script>
+  (function(d) {
+    var config = {
+      kitId: 'fsu4jcv',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+
+   <div class="worksdetail_background_box">
+   <header id="header">
+      <div class="header_inner">
+      <div class="logo">
+         <a href="../index.html">
+            <img src="../images/pf_logo.png" alt="makikokagawaポートフォリオ">
+         </a>
+      </div>
+      <div class="hamburger">
+         <span></span>
+         <p class="hamburger_menu">
+            <span class="menu_text">MENU</span>
+            <span class="close_text">CLOSE</span>
+         </p>
+      </div>
+      </div>
+
+      <nav class="header_nav">
+         <ul>
+            <li><a href="../index.html">ホーム</a></li>
+            <li><a href="../concept.html">デザインへの想い</a></li>
+            <li><a href="../about.html">私について。</a></li>
+            <li><a href="../service.html">できること。</a></li>
+            <li><a href="../works.html">制作したもの。</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <main>
+      <section class="wrapper">
+         <div class="works_link_responsive">
+               <a href=""  class="pc_link">
+               <img src="../images/pc_workdetail_cafepc.png" alt="デザインcafePCサイト">
+               <button>PC版をみる</button></a>
+               <a href="" class="sp_link">
+               <img src="../images/pc_workdetail_cafesp.png" alt="デザインcafeSPページ">
+               <button>SP版をみる</button></a>
+         </div>
+         <div class="works_link to-link_responsive">
+            <button>拡大してみる</button>
+         </div>
+         <div class="works_explanation">
+            <h4 class="works_explanation_title">「DESIGN CAFE」 WEBサイト</h4>
+            <dl>
+               <dt>担当範囲</dt>
+               <dd>コーディング</dd>
+               <dt>制作期間</dt>
+               <dd>3週間</dd>
+               <dt>使用ツール</dt>
+               <dd>Figma , VS Code , GitHub </dd>
+            </dl>
+            <p>
+               Figmaで制作されたデザインカンプをもとに、HTML・CSSでコーディングを実施。<br>JavaScript・jQueryを使用してアニメーションなどの動きを実装し、デザインの印象を損なわないよう仕上げました。<br>PC・スマートフォンに加え、タブレットでの閲覧も想定したレスポンシブ対応を行っています。
+            </p>
+         </div>
+
+         <div class="works-detail_button_container">
+               <a href="./works-portfolio.html" class="go-back">
+                  <span class="back-icon"></span>
+                  <span class="back-text">前へ</span>
+               </a>
+            
+               <a href="../works.html" class="to-worksall">
+                  <button>一覧へ</button>
+                  </a>
+               
+               <a href="./works-salon.html" class="go-next">
+                  <span class="back-text">次へ</span>
+                  <span class="next-icon"></span>
+               </a>
+         </div>
+
+         <div class="button_container">
+            <a href="index.html" class="back_button works-detail_back_button"><span>ホームへ戻る</span></a>
+         </div>
+      </section> 
+      </main>
+
+   <footer>
+      <img src="../images/footer_dandelion06.png" class="footer_dandelion" alt="たんぽぽの花">
+      <div class="footer_background"></div>
+      <div class="footer_inner">
+      <nav class="footer_nav">
+         <ul>
+            <li><a href="../index.html#about">デザインへの想い</a></li>
+            <li><a href="../index.html#service">できること。</a></li>
+            <li><a href="../index.html#works">制作したもの。</a></li>
+            <li><a href="../index.html#about">私について。</a></li>
+            <li><a href="../index.html#contact">お問い合わせ</a></li>
+         </ul>
+      </nav>
+      <div class="snslink">
+         <a href="">
+            <img src="../images/insta_icon.png" alt="インスタグラム">
+         </a>
+         <a href="">
+            <img src="../images/x_icon.png" alt="X">
+         </a>
+      </div>
+      <p>©︎2026 makiko kagawa</p>
+      </div>
+   </div>
+   </footer>  
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script>
+   $(function(){
+      $(".hamburger").on("click",function(){
+         $(".hamburger").toggleClass("open");
+         $(".header_nav").fadeToggle();
+      })
+   })
+   </script>
+</body>
+</html>
