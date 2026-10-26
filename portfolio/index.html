@@ -24,9 +24,14 @@
 
 <link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+
 </head>
 <body>
-   <div class="top_background_box">
+   <!-- <div class="top_background_box"> -->
+   <div class="background_box_gradation"></div>
    <header id="header">
       <div class="header_inner">
       <div class="logo">
@@ -58,7 +63,12 @@
    <main>
       <section id="concept">
          <div class="main_vs">
-         <img src="./images/pc_main_vs01.jpg" alt="たんぽぽの綿毛">
+            <picture>
+               <source
+                  srcset="./images/sp_main_vs01.jpg"
+                  media="(max-width:800px)">
+               <img src="./images/pc_main_vs01.jpg" alt="たんぽぽの綿毛">
+            </picture>
          <h1>
             「想い」を集め、<br>
             カタチにして届けます。
@@ -157,7 +167,7 @@
                <img src="./images/pc_menu06.jpg" alt="パッケージ">
             </div>
          </div>
-         <a href="service.html" class="more_button"><span>詳しく見る</span></a>
+         <a href="./service.html" class="more_button"><span>詳しく見る</span></a>
       </section>
       </div>
 
@@ -170,73 +180,73 @@
 
          <div class="works_list">
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-portfolio.html">
                <img src="./images/pc_work_portfolio.jpg" alt="ポートフォリオサイト">
                <p class="works_title">WEBサイト</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-cafe.html">
                <img src="./images/pc_work_cafe.jpg" alt="デザインカフェサイト">
                <p class="works_title">WEBサイト</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-salon.html">
                <img src="./images/pc_work_salon.jpg" alt="美容室サイト">
                <p class="works_title">WEBサイト</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-strawberry.html">
                <img src="./images/pc_work_ichigo.jpg" alt="いちごプリンLP">
                <p class="works_title">LP</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-pet.html">
                <img src="./images/pc_work_pet.jpg" alt="ペットサプリLP">
                <p class="works_title">LP</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-camera.html">
                <img src="./images/pc_work_camera.jpg" alt="キッズカメラ商品画像">
                <p class="works_title">商品画像</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-gingertea.html">
                <img src="./images/pc_work_gingertea.jpg" alt="生姜茶商品画像">
                <p class="works_title">商品画像</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-icecream.html">
                <img src="./images/pc_work_icecream.jpg" alt="アイスクリームバナー">
                <p class="works_title">バナー</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-burger-luxury.html">
                <img src="./images/pc_work_burger-luxury.jpg" alt="ハンバーガー高級バナー">
                <p class="works_title">バナー</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-burger-pop.html">
                <img src="./images/pc_work_burger-pop.jpg" alt="ハンバーガーPOPバナー">
                <p class="works_title">バナー</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-festival.html">
                <img src="./images/pc_work_festival.jpg" alt="感謝祭ポスター">
                <p class="works_title">ポスター</p>
                </a>
             </div>
             <div class="works_item">
-               <a href="">
+               <a href="./works/works-thanksfair.html">
                <img src="./images/pc_work_thanksfair.jpg" alt="サンキューフェア">
                <p class="works_title">ポスター</p>
                </a>
@@ -319,14 +329,35 @@
       <p>©︎2026 makiko kagawa</p>
       </div>
    </div>
-   </footer>  
+   </footer>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
    <script>
    $(function(){
       $(".hamburger").on("click",function(){
          $(".hamburger").toggleClass("open");
          $(".header_nav").fadeToggle();
       })
+   $(".works_list").slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3500,
+      centerMode: true,
+      dots: true,
+   responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        arrows: false,
+        centerMode: false,
+        slidesToShow: 1
+      }
+    },
+  ]
+});
    })
 </script>
 

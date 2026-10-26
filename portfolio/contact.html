@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>makikokagawa_portfolio|できること。</title>
+   <title>makikokagawa_portfolio|お問い合わせ</title>
 
 <!-- Adobeフォントの読み込み -->
    <script>
@@ -26,7 +26,8 @@
 <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<div class="service_background_box">
+   <div class="background_box_gradation"></div>
+<!-- <div class="service_background_box"> -->
    <header id="header">
       <div class="header_inner">
          <div class="logo">
@@ -57,21 +58,73 @@
    <main>
       <section id="contact_detail" class="wrapper">
          <div class="section_title">
-            <h2>お問い合わせ・相談する</h2>
-            <img class="wave wave-long" src="./images/pc_wave02.png" alt="波線">
+            <h2>お問い合わせ</h2>
+            <img class="wave" src="./images/pc_wave.png" alt="波線">
             <span class="section_title_en">CONTACT</span>
          </div>
          <div class="contact_detail_title">
             <p>制作内容やご希望について、分かる範囲でお聞かせください。<br><br>まだ具体的に決まっていない場合は、<br>伝えたいことやお考えのことをお聞かせいただければ大丈夫です。</p>
          </div>
 
+         <form  class="c-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdNSYHwNCGdACEiw4V89eW3E4PwH7RwuMKyIUPkwXIRGJQwyA/viewform?usp=pp_url"
+         method="post"
+         target="hidden_iframe"
+         onsubmit="submitted=true;">
+            <div class="c-form_item">
+               <label  class="c-form_label" for="field-name">
+                  お名前・会社名
+               </label>
+               <input type="text" 
+               name="entry.616926282"
+               class="c-form_input" 
+               id="field-name"
+               placeholder="お名前か会社名を入力してください。"
+               required="required"/>
+            </div>
+
+            <div class="c-form_item">
+               <label  class="c-form_label" for="field-mail">
+                  メールアドレス
+               </label>
+               <input type="email" 
+               name="entry.330943812"
+               class="c-form_input" 
+               id="field-mail"
+               placeholder="メールアドレスを入力してください。"
+               required="required"/>
+            </div>
+
+            <div class="c-form_item">
+               <label class="c-form_label" for="field-message">
+                  お問い合わせ内容
+               </label>
+               <textarea
+                  class="c-form_input"
+                  name="entry.1274225526"
+                  id="field-message"
+                  placeholder="お問い合わせ内容を入力してください。"
+                  required="required"></textarea>
+            </div>
+
+            <div class="c-form_caution">
+               <span>
+                  ※3営業日以内に返信いたします。
+               </span>
+            </div>
+
+
+
+            <div class="c-form_submit">
+               <button type="submit">送信する</button>
+            </div>
+         </form>
+
          <div class="button_container">
             <a href="./index.html" class="back_button works-detail_back_button"><span>ホームへ戻る</span></a>
          </div>
-      </section>
-   </div>   
+      </section>   
    </main>
-
+</div>
    <footer>
       <img src="./images/footer_dandelion05.png" class="footer_dandelion" alt="たんぽぽの花">
       <div class="footer_background"></div>
@@ -107,5 +160,14 @@
       })
    })
    </script>
+   <script type="text/javascript">
+    let submitted = false;
+</script>
+<iframe
+    name="hidden_iframe"
+    id="hidden_iframe"
+    style="display: none"
+    onload="if(submitted){window.location='./thanks.html';}"
+></iframe>
 </body>
 </html>
