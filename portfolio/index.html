@@ -30,7 +30,36 @@
 
 </head>
 <body>
-   <!-- <div class="top_background_box"> -->
+   <div id="loading">
+   <div class="loading_contents">
+      <p class="loading_text">
+         <span class="char">M</span>
+         <span class="char">A</span>
+         <span class="char">K</span>
+         <span class="char">I</span>
+         <span class="char">K</span>
+         <span class="char">O</span>
+         <span class="space"></span>
+         <span class="char">K</span>
+         <span class="char">A</span>
+         <span class="char">G</span>
+         <span class="char">A</span>
+         <span class="char">W</span>
+         <span class="char">A</span>
+         <br>
+         <span class="char">P</span>
+         <span class="char">O</span>
+         <span class="char">R</span>
+         <span class="char">T</span>
+         <span class="char">F</span>
+         <span class="char">O</span>
+         <span class="char">L</span>
+         <span class="char">I</span>
+         <span class="char">O</span>
+      </p>
+   </div>
+</div>
+   
    <div class="background_box_gradation"></div>
    <header id="header">
       <div class="header_inner">
@@ -363,38 +392,62 @@
 
    <script>
    $(function(){
-      $(".hamburger").on("click",function(){
-         $(".hamburger").toggleClass("open");
-         $(".header_nav").fadeToggle().toggleClass("open");
-      })
-   $(function() {
-   setTimeout(function() {
-      $(".fluff_animation").addClass("is-animated");
-   }, 500);
+
+   // ハンバーガーメニュー
+   $(".hamburger").on("click",function(){
+      $(".hamburger").toggleClass("open");
+      $(".header_nav").fadeToggle().toggleClass("open");
    });
-   $(function() {
-   setTimeout(function() {
+
+   const loadingElement = document.getElementById('loading');
+   document.querySelectorAll('#loading .char').forEach(function(char, index) {
+      char.style.animationDelay = (index * 0.2) + 's';
+   });
+
+   function startAnimation() {
       $("h1.fadeIn").addClass("is-show");
-   }, 500);
-});
-});
+      setTimeout(function() {
+         $(".fluff_animation").addClass("is-animated");
+      }, 500);
+   }
+   function hideLoading() {
+      loadingElement.classList.add('is-hidden');
+      setTimeout(function() {
+         startAnimation();
+      }, 1000);
+   }
+
+   if (!sessionStorage.getItem('firstVisit')) {
+      sessionStorage.setItem('firstVisit', 'true');
+      loadingElement.classList.add('is-show');
+      setTimeout(function() {
+         hideLoading();
+      }, 6200);
+   } else {
+      loadingElement.style.display = 'none';
+      startAnimation();
+   }
+   
    $(".works_list").slick({
       slidesToShow: 3,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 3500,
       centerMode: true,
+      centerPadding: '20px',
       dots: true,
-   responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        arrows: false,
-        centerMode: false,
-        slidesToShow: 1
-      }
-    },
-  ]
+
+      responsive: [
+         {
+            breakpoint: 800,
+            settings: {
+               slidesToShow: 1,
+               centerMode: true,
+               centerPadding: '20px'
+            }
+         }
+      ]
+   });
 });
 </script>
 

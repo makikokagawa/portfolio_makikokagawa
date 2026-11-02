@@ -15,25 +15,48 @@ body{
    margin: 0;
 }
 #loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url(../images/pc_worksdetail_background.jpg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+   position: fixed;
+   inset: 0;
+   background: url(../images/pc_worksdetail_background.jpg);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 9999;
+   transition: opacity 1s ease, visibility 1s ease;
 }
-
+#loading.is-hidden {
+   opacity: 0;
+   visibility: hidden;
+}
 .loading_contents {
-  text-align: center;
+   text-align: center;
+}
+.loading_text {
+   font-family: "Nunito", sans-serif;
+   font-weight: 600;
+   color: #A27945;
+}
+.loading_text .char {
+   display: inline-block;
+   font-size: 32px;
+   margin-right: 0.1em;
+   margin-bottom: 32px;
+   opacity: 0;
+   transform: translateY(8px);
+}
+#loading.is-show .char {
+   animation: charFade 1.8s ease-out forwards;
 }
 
-.loading__text {
-  font-size: 32px;
-  font-weight: 700;
-  color: #A27945;
+@keyframes charFade {
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+.loading_text .space {
+   display: inline-block;
+   width: 0.5em;
 }
 .background_box_gradation {
    position: fixed;
@@ -1593,6 +1616,12 @@ footer{
 .remodal {
   position: relative;
   padding: 25px;
+  background-color: #fff8db;
+  border-radius: 12px;
+}
+.remodal-overlay {
+   background: #e3caab;
+   opacity: 0.6;
 }
 .remodal img {
   width: 100%;
