@@ -66,10 +66,13 @@
             <p>制作内容やご希望について、分かる範囲でお聞かせください。<br><br>まだ具体的に決まっていない場合は、<br>伝えたいことやお考えのことをお聞かせいただければ大丈夫です。</p>
          </div>
 
-         <form  class="c-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdNSYHwNCGdACEiw4V89eW3E4PwH7RwuMKyIUPkwXIRGJQwyA/viewform?usp=pp_url"
+         <form class="c-form"
+         action="https://docs.google.com/forms/d/e/1FAIpQLSdNSYHwNCGdACEiw4V89eW3E4PwH7RwuMKyIUPkwXIRGJQwyA/formResponse"
          method="post"
          target="hidden_iframe"
-         onsubmit="submitted=true;">
+         onsubmit="submitted = true;">
+
+
             <div class="c-form_item">
                <label  class="c-form_label" for="field-name">
                   お名前・会社名
@@ -156,7 +159,7 @@
    $(function(){
       $(".hamburger").on("click",function(){
          $(".hamburger").toggleClass("open");
-         $(".header_nav").fadeToggle();
+         $(".header_nav").fadeToggle().toggleClass("open");
       })
    })
    </script>

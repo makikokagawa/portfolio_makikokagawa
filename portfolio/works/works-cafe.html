@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>makikokagawa_portfolio|制作実績【「DESIGN CAFE」 WEBサイト】</title>
+   <title>制作実績【「DESIGN CAFE」 WEBサイト】|makikokagawa_portfolio</title>
 
    <!-- Adobeフォントの読み込み -->
    <script>
@@ -19,6 +19,11 @@
 
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal-default-theme.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.js"></script>
+
 
 </head>
 <body>
@@ -54,17 +59,32 @@
 
    <main>
       <section class="wrapper">
-         <div class="works_link_responsive">
-               <a href=""  class="pc_link">
-               <img src="../images/pc_workdetail_cafepc.png" alt="デザインcafePCサイト">
-               <button>PC版をみる</button></a>
-               <a href="" class="sp_link">
-               <img src="../images/pc_workdetail_cafesp.png" alt="デザインcafeSPページ">
-               <button>SP版をみる</button></a>
-         </div>
-         <div class="works_link to-link_responsive">
-            <button>拡大してみる</button>
-         </div>
+            <div class="works_link_responsive">
+               <a href="#modal_01"  class="pc_link">
+               <img src="../images/pc_workdetail_cafepc.png" alt="デザインcafePCサイト"></a>
+                  <div class="remodal" data-remodal-id="modal_01">
+                     <img src="../images/modal01_cafepc.jpg" alt="デザインcafePCサイト">
+                     <button data-remodal-action="cancel" class="remodal-close" aria-label="閉じる"></button>
+                  </div>
+               <a href="#modal_02" class="sp_link">
+               <img src="../images/pc_workdetail_cafesp.png" alt="デザインcafeSPページ"></a>
+                  <div class="remodal" data-remodal-id="modal_02">
+                     <img src="../images/modal02_cafesp.jpg" alt="デザインcafeSPサイト">
+                     <button data-remodal-action="cancel" class="remodal-close" aria-label="閉じる"></button>
+                  </div>
+            </div>
+
+            <div class="works_link to-link_responsive accordion_one">
+               <button class="accordion_header" type="button" aria-expanded="false">拡大してみる</button>
+               
+               <div class="accordion_inner">
+                  <div class="accordion_links">
+                     <a class="accordion_link" href="#modal_01">PC版をみる</a>
+                     <a class="accordion_link" href="#modal_02">SP版をみる</a>
+                  </div>
+               </div>
+            </div>
+
          <div class="works_explanation">
             <h4 class="works_explanation_title">「DESIGN CAFE」 WEBサイト</h4>
             <dl>
@@ -133,9 +153,22 @@
    $(function(){
       $(".hamburger").on("click",function(){
          $(".hamburger").toggleClass("open");
-         $(".header_nav").fadeToggle();
+         $(".header_nav").fadeToggle().toggleClass("open");
       })
    })
    </script>
+   <script>
+   $(function () {
+      $.fx.off = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+   $('.accordion_one .accordion_header').on('click', function () {
+      const $button = $(this);
+      const $content = $button.next('.accordion_inner');
+      const isOpen = $button.attr('aria-expanded') === 'true';
+
+      $content.slideToggle();
+      $button.attr('aria-expanded', !isOpen);
+   });
+});
+</script>
 </body>
 </html>

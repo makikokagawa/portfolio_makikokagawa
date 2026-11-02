@@ -19,6 +19,11 @@
 
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal-default-theme.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.js"></script>
+
 
 </head>
 <body>
@@ -55,10 +60,14 @@
    <main>
       <section class="wrapper">
          <div class="works_link">
-            <a href="">
+            <a href="#modal_05">
             <img src="../images/pc_workdetail_salon.png" alt="美容室サイト">
             <button>拡大してみる</button>
             </a>
+            <div class="remodal" data-remodal-id="modal_05">
+                     <img src="../images/modal05_salon.jpg" alt="美容室サイト">
+                     <button data-remodal-action="cancel" class="remodal-close" aria-label="閉じる"></button>
+                  </div>
          </div>
          <div class="works_explanation">
             <h4 class="works_explanation_title">美容室「LIFE」 HP</h4>
@@ -128,9 +137,22 @@
    $(function(){
       $(".hamburger").on("click",function(){
          $(".hamburger").toggleClass("open");
-         $(".header_nav").fadeToggle();
+         $(".header_nav").fadeToggle().toggleClass("open");
       })
    })
+   </script>
+   <script>
+   $(function () {
+      $.fx.off = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+   $('.accordion_one .accordion_header').on('click', function () {
+      const $button = $(this);
+      const $content = $button.next('.accordion_inner');
+      const isOpen = $button.attr('aria-expanded') === 'true';
+
+      $content.slideToggle();
+      $button.attr('aria-expanded', !isOpen);
+   });
+   });
    </script>
 </body>
 </html>

@@ -26,7 +26,16 @@
 <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<div class="service_background_box">
+   <div id="loading">
+      <div class="loading_contents">
+         <p class="loading_text">
+            MAKIKO KAGAWA<br>PORTFOLIO
+         </p>
+      </div>
+   </div>
+
+
+<div class="background_box_gradation"> </div> 
    <header id="header">
       <div class="header_inner">
          <div class="logo">
@@ -167,7 +176,6 @@
             <a href="works.html" class="more_button"><span>制作したもの。を見る</span></a>
          </div>
       </section>
-   </div>   
       <section id="contact" class="wrapper mgtp80">
           <div class="section_title">
             <h2>お問い合わせ</h2>
@@ -216,9 +224,34 @@
    $(function(){
       $(".hamburger").on("click",function(){
          $(".hamburger").toggleClass("open");
-         $(".header_nav").fadeToggle();
+         $(".header_nav").fadeToggle().toggleClass("open");
       })
    })
+   window.addEventListener('DOMContentLoaded', function() {
+  const loadingElement = document.getElementById('loading');
+
+  // ローディング画面を非表示にする関数
+  function hideLoading() {
+    loadingElement.style.transition = 'opacity .6s ease, visibility .6s ease';
+    loadingElement.style.opacity = 0;
+    loadingElement.style.visibility = 'hidden';
+  }
+
+  // ページが初回訪問かどうかをセッションストレージで確認
+  if (!sessionStorage.getItem('firstVisit')) {
+    // 初回訪問の場合、セッションストレージにフラグをセット
+    sessionStorage.setItem('firstVisit', 'true');
+
+    // ローディング画面を表示し、4秒後に非表示にする
+    setTimeout(function() {
+      hideLoading();
+    }, 4000);
+
+  } else {
+    // 初回訪問ではない場合、ローディング画面を非表示にする
+    loadingElement.style.display = 'none';
+  }
+});
    </script>
 </body>
 </html>

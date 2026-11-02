@@ -19,6 +19,10 @@
 
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal-default-theme.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.js"></script>
 
 </head>
 <body>
@@ -55,10 +59,14 @@
    <main>
       <section class="wrapper">
          <div class="works_link works_link_sp">
-            <a href="">
+            <a href="#modal_08">
             <img src="../images/workdetail_gingertea.png" alt="生姜茶商品画像">
             <button>拡大してみる</button>
             </a>
+            <div class="remodal" data-remodal-id="modal_08">
+                     <img src="../images/modal08_gingertea.jpg" alt="生姜茶商品画像">
+                     <button data-remodal-action="cancel" class="remodal-close" aria-label="閉じる"></button>
+                  </div>
          </div>
          <div class="works_explanation">
             <h4 class="works_explanation_title">生姜茶「芯温茶」商品画像</h4>
@@ -128,7 +136,7 @@
    $(function(){
       $(".hamburger").on("click",function(){
          $(".hamburger").toggleClass("open");
-         $(".header_nav").fadeToggle();
+         $(".header_nav").fadeToggle().toggleClass("open");
       })
    })
    </script>

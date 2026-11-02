@@ -28,7 +28,7 @@
 </head>
 <body>
 
-   <div class="about_background_box">
+   <div class="background_box_gradation"> </div>
    <header id="header">
       <div class="header_inner">
       <div class="logo">
@@ -126,7 +126,6 @@
          <a href="index.html" class="back_button sp-none"><span>ホームへ戻る</span></a>
          <a href="service.html" class="more_button"><span>できること。を見る</span></a>
       </div>
-      </div>
       </section>
    
 
@@ -178,7 +177,7 @@
    $(function(){
       $(".hamburger").on("click",function(){
          $(".hamburger").toggleClass("open");
-         $(".header_nav").fadeToggle();
+         $(".header_nav").fadeToggle().toggleClass("open");
       })
    })
 </script>
