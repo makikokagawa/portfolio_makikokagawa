@@ -1,5 +1,65 @@
 @charset "UTF-8";
+body{
+   position: relative;
+   cursor: none;
+   height:100vh;
+}
+body,
+a,
+button,
+input,
+textarea,
+select {
+   cursor: none;
+}
 
+/*カーソル要素*/
+#cursor{
+  position: fixed;
+
+  /*丸の大きさと色の指定*/
+   background:url(../images/cursor.png);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+
+  width: 24px;
+  height: 24px;
+  margin: -22px 0 0 -22px;
+
+  z-index: 2;/*一番手前に来るように*/
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.1s;
+}
+
+/*ちょっと遅れてついてくるストーカー要素*/
+#stalker{
+  position: fixed;
+  width: 64px;
+   height: 35px;
+   margin: -17px 0 0 -70px;
+   z-index: 1;
+   pointer-events: none;
+   opacity: 0;
+   transition: transform 0.5s;
+}
+
+#stalker svg {
+   width: 100%;
+   height: 100%;
+   overflow: visible;
+}
+#cursor.active{
+  transform: scale(1.5);
+}
+#stalker.active{
+   opacity: 0;
+}
+body:has(a:hover, button:hover) #stalker {
+   opacity: 0 !important;
+   transition: opacity 0.3s ease;
+}
 main{
    font-family: "fot-tsukuardgothic-std", sans-serif;
    font-weight: 400;
@@ -102,14 +162,14 @@ body{
       transparent 78%
    );
    filter: blur(35px);
-   animation: wind-main 8s ease-in-out infinite alternate;
+   animation: wind-main 5s ease-in-out infinite alternate;
 }
 .background_box_gradation::after {
    content: "";
    position: absolute;
    width: 135%;
    height: 25%;
-   top: 70%;
+   top: 50%;
    left: -20%;
    border-radius: 50%;
    background: linear-gradient(
@@ -122,7 +182,7 @@ body{
    );
 
    filter: blur(25px);
-   animation: wind-sub 18s ease-in-out infinite alternate;
+   animation: wind-sub 10s ease-in-out infinite alternate;
 }
 .background_box_gradation {
    isolation: isolate;
@@ -822,11 +882,10 @@ h2{
    border-radius: 24px;
    padding: 40px;
 }
-/* @media screen and (max-width:480px){
+@media screen and (max-width:480px){
    .service_item{
-   width: 95%;
-   margin: 0 auto;
-}} */
+   padding: 10%;
+}}
 
 .service_item img{
    width: 98%;
@@ -975,6 +1034,13 @@ h4{
    background-repeat: no-repeat;
    z-index: -1;
 }
+@media screen and (min-width:1600px){
+   #about::before{
+   bottom: -60px;
+}
+   #works::before {
+    bottom: -100px;
+}}
 
 .about-me{
    display: flex;
@@ -2102,6 +2168,9 @@ textarea.c-form_input{
    .works_list .slick-dots li {
       width: 15px;
       height: 15px;
+   }
+   .works_item p{
+      margin-bottom: 60px;
    }
    .about-me {
       display: flex;
