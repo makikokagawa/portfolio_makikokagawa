@@ -27,8 +27,25 @@
 
 </head>
 <body>
+   <div id="cursor"></div>
+  <div id="stalker">
+   <svg viewBox="0 0 100 50">
+      <path
+         d="M 0 25 C 15 18, 25 18, 40 25 S 65 32, 80 25"
+         fill="none"
+         stroke="#A27945"
+         stroke-width="1"
+         stroke-dasharray="3 5"
+         stroke-linecap="round"
+      />
+   </svg>
+  </div>
 
-   <div class="background_box_gradation"> </div>
+   <div class="background_box_gradation">
+      <span class="wind wind3"></span>
+      <span class="wind wind4"></span>
+      <span class="wind wind5"></span>
+   </div>
    <header id="header">
       <div class="header_inner">
       <div class="logo">
@@ -180,6 +197,33 @@
          $(".header_nav").fadeToggle().toggleClass("open");
       })
    })
+      // マウスカーソル
+   var cursor = $("#cursor");
+   var stalker = $("#stalker");
+
+   $(document).on("mousemove", function(e) {
+      var x = e.clientX;
+      var y = e.clientY;
+      cursor.css({
+         "opacity": "1",
+         "top": y + "px",
+         "left": x + "px"
+      });
+      stalker.css({
+         "top": y + "px",
+         "left": x + "px"
+      });
+      if (!stalker.hasClass("active")) {
+         stalker.css("opacity", "1");
+      }
+   });
+      $("a, button, .hamburger").on("mouseenter", function() {
+         cursor.addClass("active");
+   });
+
+      $("a, button, .hamburger").on("mouseleave", function() {
+         cursor.removeClass("active");
+   });
 </script>
 </body>
 </html>

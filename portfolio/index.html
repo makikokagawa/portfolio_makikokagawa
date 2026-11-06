@@ -74,7 +74,11 @@
    </svg>
   </div>
    
-   <div class="background_box_gradation"></div>
+   <div class="background_box_gradation">
+      <span class="wind wind3"></span>
+      <span class="wind wind4"></span>
+      <span class="wind wind5"></span>
+   </div>
    <header id="header">
       <div class="header_inner">
       <div class="logo">
@@ -251,73 +255,97 @@
          <div class="works_list">
             <div class="works_item">
                <a href="./works/works-portfolio.html">
-               <img src="./images/pc_work_portfolio.jpg" alt="ポートフォリオサイト">
+                  <div class="works_img">
+                     <img src="./images/pc_work_portfolio.jpg" alt="ポートフォリオサイト">
+                  </div>
                <p class="works_title">WEBサイト</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-cafe.html">
-               <img src="./images/pc_work_cafe.jpg" alt="デザインカフェサイト">
+                  <div class="works_img">
+                     <img src="./images/pc_work_cafe.jpg" alt="デザインカフェサイト">
+                  </div>
                <p class="works_title">WEBサイト</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-salon.html">
-               <img src="./images/pc_work_salon.jpg" alt="美容室サイト">
+                  <div class="works_img">
+                     <img src="./images/pc_work_salon.jpg" alt="美容室サイト">
+                  </div>
                <p class="works_title">WEBサイト</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-strawberry.html">
-               <img src="./images/pc_work_ichigo.jpg" alt="いちごプリンLP">
+                  <div class="works_img">
+                     <img src="./images/pc_work_ichigo.jpg" alt="いちごプリンLP">
+                  </div>
                <p class="works_title">LP</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-pet.html">
-               <img src="./images/pc_work_pet.jpg" alt="ペットサプリLP">
+                  <div class="works_img">
+                     <img src="./images/pc_work_pet.jpg" alt="ペットサプリLP">
+                  </div>
                <p class="works_title">LP</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-camera.html">
-               <img src="./images/pc_work_camera.jpg" alt="キッズカメラ商品画像">
+                  <div class="works_img">
+                     <img src="./images/pc_work_camera.jpg" alt="キッズカメラ商品画像">
+                  </div>
                <p class="works_title">商品画像</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-gingertea.html">
-               <img src="./images/pc_work_gingertea.jpg" alt="生姜茶商品画像">
+                  <div class="works_img">
+                     <img src="./images/pc_work_gingertea.jpg" alt="生姜茶商品画像">
+                  </div>
                <p class="works_title">商品画像</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-icecream.html">
-               <img src="./images/pc_work_icecream.jpg" alt="アイスクリームバナー">
+                  <div class="works_img">
+                     <img src="./images/pc_work_icecream.jpg" alt="アイスクリームバナー">
+                  </div>
                <p class="works_title">バナー</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-burger-luxury.html">
-               <img src="./images/pc_work_burger-luxury.jpg" alt="ハンバーガー高級バナー">
+                  <div class="works_img">
+                     <img src="./images/pc_work_burger-luxury.jpg" alt="ハンバーガー高級バナー">
+                  </div>
                <p class="works_title">バナー</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-burger-pop.html">
-               <img src="./images/pc_work_burger-pop.jpg" alt="ハンバーガーPOPバナー">
+                  <div class="works_img">
+                     <img src="./images/pc_work_burger-pop.jpg" alt="ハンバーガーPOPバナー">
+                  </div>
                <p class="works_title">バナー</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-festival.html">
-               <img src="./images/pc_work_festival.jpg" alt="感謝祭ポスター">
+                  <div class="works_img">
+                     <img src="./images/pc_work_festival.jpg" alt="感謝祭ポスター">
+                  </div>
                <p class="works_title">ポスター</p>
                </a>
             </div>
             <div class="works_item">
                <a href="./works/works-thanksfair.html">
-               <img src="./images/pc_work_thanksfair.jpg" alt="サンキューフェア">
+                  <div class="works_img">
+                     <img src="./images/pc_work_thanksfair.jpg" alt="サンキューフェア">
+                  </div>
                <p class="works_title">ポスター</p>
                </a>
             </div>
@@ -411,8 +439,17 @@
    $(".hamburger").on("click",function(){
       $(".hamburger").toggleClass("open");
       $(".header_nav").fadeToggle().toggleClass("open");
-   });
+      $(document).on("click",function(e){
 
+      if(
+         !$(e.target).closest(".header_nav").length &&
+         !$(e.target).closest(".hamburger").length
+      ){
+         $(".header_nav").fadeOut();
+         $(".hamburger").removeClass("open");
+      }
+   });
+   });
    // ローディングアニメーション
    const loadingElement = document.getElementById('loading');
 
@@ -452,42 +489,31 @@
 
    // マウスカーソル
    var cursor = $("#cursor");
-
-   // 遅れてついてくる波線
    var stalker = $("#stalker");
 
-   // マウスの移動
    $(document).on("mousemove", function(e) {
-
       var x = e.clientX;
       var y = e.clientY;
-
-      // 綿毛カーソル
       cursor.css({
          "opacity": "1",
          "top": y + "px",
          "left": x + "px"
       });
-
-      // 波線の位置
       stalker.css({
          "top": y + "px",
          "left": x + "px"
       });
-
-      // ホバーしていないときだけ波線を表示
       if (!stalker.hasClass("active")) {
          stalker.css("opacity", "1");
       }
-         $("a, button").on("mouseenter", function() {
-      cursor.addClass("active");
+   });
+      $("a, button, .hamburger").on("mouseenter", function() {
+         cursor.addClass("active");
    });
 
-   $("a, button").on("mouseleave", function() {
-      cursor.removeClass("active");
+      $("a, button, .hamburger").on("mouseleave", function() {
+         cursor.removeClass("active");
    });
-   });
-
 
    // WORKSスライダー
    $(".works_list").slick({
