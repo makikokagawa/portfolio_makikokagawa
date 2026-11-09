@@ -144,7 +144,7 @@ body{
    linear-gradient(
       110deg,
       transparent 30%,
-      rgba(255,255,255,0.12) 45%,
+      rgba(255,255,255,0.6) 45%,
       transparent 60%
    ),
    linear-gradient(
@@ -182,7 +182,7 @@ body{
 );
 
    filter: blur(20px);
-   animation: wind-main 14s linear infinite;
+   animation: wind-main 10s linear infinite;
    animation-delay: 0s;
 }
 
@@ -206,7 +206,7 @@ body{
    );
 
    filter: blur(20px);
-   animation: wind-sub 14s linear infinite;
+   animation: wind-sub 10s linear infinite;
    animation-delay: -3s;
 }
 .wind3 {
@@ -228,7 +228,7 @@ body{
    );
 
    filter: blur(20px);
-   animation: wind-third 14s linear infinite;
+   animation: wind-third 10s linear infinite;
    animation-delay: -6s;
 }
 .wind4 {
@@ -250,7 +250,7 @@ body{
    );
 
    filter: blur(20px);
-   animation: wind-fourth 14s linear infinite;
+   animation: wind-fourth 10s linear infinite;
    animation-delay: -9s;
 }
    .wind5 {
@@ -272,7 +272,7 @@ body{
    );
 
    filter: blur(20px);
-   animation: wind-main 14s linear infinite;
+   animation: wind-main 10s linear infinite;
    animation-delay: -6s;
 }
 
@@ -375,7 +375,7 @@ body{
    }
 }
 .worksdetail_background_box{
-   background-image: url(../images/pc_worksdetail_background.jpg);
+   background-image: url(../images/pc_home_background.jpg);
    width: 100%;
    background-size: cover;
    background-position: center;
@@ -694,7 +694,7 @@ h1{
 }
 .fadeIn {
   opacity: 0;
-  transition: opacity 3s ease;
+  transition: opacity 5s ease;
 }
 .fadeIn.is-show {
   opacity: 1;
@@ -1025,7 +1025,7 @@ h2{
 .service_item{
    display: flex;
    flex-direction: column;
-   background-color: #fff8db;
+   background-color: #fff5cf;
    border-radius: 24px;
    padding: 40px;
 }
