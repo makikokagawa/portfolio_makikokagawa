@@ -1344,7 +1344,6 @@ h4{
    width: 47%;
    margin: 0 auto;
 }
-
 .link-contact{
    margin: 96px auto;
 }
@@ -2062,8 +2061,21 @@ footer{
    margin-bottom: 20px;
 }
 .c-form_label{
+   display: flex;
    padding: 10px;
    font-weight: 700;
+   align-items: center;
+   gap: 8px;
+}
+.required_form{
+   background-color: #DBB88C;
+   color: #FAF7CD;
+   height: 18px;
+   width: 48px;
+   font-size: 14px;
+   text-align: center;
+   padding-top: 4px;
+   border-radius: 6px;
 }
 .c-form_input{
    box-sizing: border-box;
