@@ -53,6 +53,21 @@ body:has(a:hover, button:hover, .hamburger:hover) #stalker {
    opacity: 0 !important;
    transition: opacity 0.3s ease;
 }
+@media (pointer: coarse) {
+   #cursor,
+   #stalker {
+      display: none !important;
+   }
+
+   body,
+   a,
+   button,
+   input,
+   textarea,
+   select {
+      cursor: auto !important;
+   }
+}
 main{
    font-family: "fot-tsukuardgothic-std", sans-serif;
    font-weight: 400;
@@ -411,8 +426,8 @@ body{
 
 .hamburger{
    display: block;
-   width: 40px;
-   height: 40px;
+   width: 70px;
+   height: 70px;
    position: absolute;
    top: 24px;
    right: 40px;
@@ -860,7 +875,7 @@ h1{
    display: block;
    text-align: left;
    width: fit-content;
-   height: 48px;
+   height: 60px;
    font-family: "fot-tsukuardgothic-std", sans-serif;
    font-weight: 400;
    font-style: normal;
@@ -1129,8 +1144,8 @@ h4{
 } 
 .works_item p{
    display: block;
-    margin-top: 18px;
-    text-align: center;
+   margin-top: 18px;
+   text-align: center;
    font-family: "fot-tsukuardgothic-std", sans-serif;
    font-weight: 700;
    font-style: normal;
@@ -1147,10 +1162,23 @@ h4{
    padding: 0;
    z-index: 2;
 }
+.works_list .slick-dots li {
+   width: 40px;
+   height: 40px;
+   margin: 0 4px;
+}
+.works_list .slick-dots li button {
+   width: 40px;
+   height: 40px;
+   padding: 0;
+}
 .works_list .slick-dots li button:before {
    color: #A27945;
    font-size: 10px;
    opacity: 0.4;
+   width: 40px;
+   height: 40px;
+   line-height: 40px;
 }
 
 .works_list .slick-dots li.slick-active button:before {
@@ -1349,7 +1377,7 @@ footer{
    display: flex;
    flex-direction: column;
    justify-content: center;
-   gap: 40px;
+   gap: 8px;
    padding: 180px 0 48px 0;
    z-index: 2;
 }
@@ -1364,11 +1392,15 @@ footer{
    gap: 3%;
    justify-content: center;
 }
-
+.footer_nav ul a{
+   display: block;
+   height: 40px;
+}
 .snslink{
    display: flex;
    gap: 4%;
    justify-content: center;
+   margin: 16px 0;
 }
 
 .snslink img{
@@ -1670,7 +1702,7 @@ footer{
    border-left: solid 5px #A27945;
    padding-left: 12px;
    align-items: flex-start;
-   margin: 8px 10px;
+   margin: 16px 10px;
 }
 .filterbutton{
    display: grid;
@@ -2300,7 +2332,8 @@ textarea.c-form_input{
       padding-top: 80px;
    }
    .header_nav ul {
-      gap: 80px;
+      gap: 48px;
+      margin-top: 23%;
 }
    .header_nav {
     width: 100%;
@@ -2313,11 +2346,23 @@ textarea.c-form_input{
       margin-top: 0;
    }
    .works_list .slick-dots li {
-      width: 15px;
-      height: 15px;
-   }
+   width: 16px;
+   height: 16px;
+}
+.works_list .slick-dots li button {
+   width: 16px;
+   height: 16px;
+}
+.works_list .slick-dots li button:before {
+   width: 16px;
+   height: 16px;
+   line-height: 16px;
+}
    .works_item p{
       margin-bottom: 60px;
+   }
+   .works_list {
+   width: 80%;
    }
    .about-me {
       display: flex;
@@ -2620,6 +2665,7 @@ textarea.c-form_input{
     }
    .snslink {
       gap: 7%;
+      margin: 5px;
    }
    .works_detail_list .burger-luxury {
       max-width: 600px;
